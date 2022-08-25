@@ -1,0 +1,21 @@
+weMX¢ç Information
+weMX¢ç Thank to you all for using the product.
+weMX¢ç All programs, files, guides and other contents shall be protected by copyrights and computer program protection laws.
+The usage of the product means that the user gets rights to use this product in an officially authorized manner.
+Any activities modifying to alter functionality or capability without the permission or violating the Software License Agreement to use the product shall be punishable. 
+All programs, files and other contents included in the product shall not be modified or changed for resale.
+
+weMX¢ç Designer copyrights
+weMX Tech Co., LTD. has the copyrights and intellectual property rights of all programs and other attachments included in weMX¢ç Designer. 
+Those rights shall be protected by copyrights and computer program protection laws of the Republic of Korea and international copyrights treaty.
+Therefore, modifying, changing or copying any files and other contents shall not be allowed without the permission of weMX Tech Co., LTD.
+weMX Tech Co., LTD. does not guarantee that functionality of this product shall comply with certain intention of a user. 
+weMX Tech Co., LTD. shall not be liable for any consequences of using this product.
+
+weMX¢ç used open source licensed libraries.
+The libraries are copyrighted under their respective open source license policies and weMX¢ç is not responsible for them.
+Libraries covered by the LGPL license will provide the original and modified sources upon request.
+It is also possible to provide dynamic libraries and development environments that can be run with applications.
+When you install the program, a copy of the open source license is distributed in the license folder in the installation path.
+
+Copyright ¨Ï 2019 weMX Tech Co., LTD. All rights reserved. Made in Korea.
