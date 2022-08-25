@@ -29,7 +29,7 @@
   WriteRegStr HKCR "${FILECLASS}\shell\${VERB}\command" "" `${COMMAND}`
 !macroend
 
-!macro APP_ASSOCIATE_WEMX EXT FILECLASS DESCRIPTION ICON VERB DEFAULTVERB SHELLNEW COMMANDTEXT COMMAND
+!macro APP_ASSOCIATE_TK EXT FILECLASS DESCRIPTION ICON VERB DEFAULTVERB SHELLNEW COMMANDTEXT COMMAND
   ; Backup the previously associated file class
   ReadRegStr $R0 HKCR ".${EXT}" ""
   WriteRegStr HKCR ".${EXT}" "${FILECLASS}_backup" "$R0"
@@ -85,30 +85,19 @@
 !define PRODUCT_REVISION "_1"
 !endif
 
-!define PRODUCT_PUBLISHER "Strato Co., LTD."
-!define PRODUCT_WEB_SITE "http://strato.co.kr/"
 
-!define PRODUCT_DIR_REGKEY "Software\Microsoft\Windows\CurrentVersion\App Paths\playerapp.exe"
+!define PRODUCT_DIR_REGKEY "Software\Microsoft\Windows\CurrentVersion\App Paths\timekeeperwaker.exe"
 !define PRODUCT_UNINST_KEY_2018 "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_FULL_NAME_2018}"
 !define PRODUCT_UNINST_KEY "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_FULL_NAME}"
 !define PRODUCT_UNINST_ROOT_KEY "HKLM"
 !define PRODUCT_PROGRAM_VERSION "v2.1.0.${PRODUCT_REVISION}"
 
-!define PRODUCT_PLAYER_NAME "weMX Player"
-!define PRODUCT_DESIGNER_NAME "weMX Designer"
+!define PRODUCT_P_NAME "TK p"
+!define PRODUCT_D_NAME "TK d"
 ;!define PRODUCT_PLAYER_LINK_NAME "${PRODUCT_NAME} Player ${PRODUCT_VERSION}"
-!define PRODUCT_PLAYER_LINK_NAME "${PRODUCT_NAME} Player 2020"
-;!define PRODUCT_PLAYER_LINK_DEBUG_NAME "${PRODUCT_NAME} Player ${PRODUCT_VERSION}(Debug)"
-!define PRODUCT_PLAYER_LINK_DEBUG_NAME "${PRODUCT_NAME} Player 2020(Debug)"
-;!define PRODUCT_DESIGNER_LINK_NAME "${PRODUCT_NAME} Designer ${PRODUCT_VERSION}"
-!define PRODUCT_DESIGNER_LINK_NAME "${PRODUCT_NAME} Designer 2020"
-!define PRODUCT_LICENSETOOL_LINK_NAME "License Tool"
-!define PRODUCT_DESIGNER_PROCESS_NAME "designercore.exe"
-!define PRODUCT_PLAYER_PROCESS_NAME "playerapp.exe"
-!define PRODUCT_MANUAL_NAME "Manual"
-!define PRODUCT_MANUAL_PATH "$INSTDIR\manual"
-;!define PRODUCT_LOCAL_APPDATA_PATH "$LOCALAPPDATA\weMX2"
-!define PRODUCT_LOCAL_APPDATA_PATH "$PROFILE\weMX2\settings\HMI"
+!define PRODUCT_PLAYER_LINK_NAME "${PRODUCT_NAME} P 2020"
+!define PRODUCT_PLAYER_LINK_DEBUG_NAME "${PRODUCT_NAME} P (Debug)"
+
 !define SETTING_DATA "Setting Data"
 
 
@@ -147,43 +136,25 @@ LangString STR_INSTALL_REDIST_2013  ${LANG_ENGLISH} "Install the Redistributable
 LangString STR_INSTALL_REDIST_2017  ${LANG_KOREAN}  "프로그램 실행을 위해 Visual C++ 2017 Redistributable를 설치합니다."
 LangString STR_INSTALL_REDIST_2017  ${LANG_ENGLISH} "Install the Redistributable Visual C ++ 2017 for run the program."
 
-;2019-09-25
-;LangString STR_ALREADY_INSTALLED    ${LANG_KOREAN}  "${PRODUCT_FULL_VERSION_NAME}은 이미 설치되어 있습니다. $\n$\n확인 버튼을 누르면 이전 버전을 삭제 후 재설치하고 취소 버튼을 누르면 업그레이드를 취소합니다."
-;LangString STR_ALREADY_INSTALLED    ${LANG_ENGLISH} "${PRODUCT_FULL_VERSION_NAME} was already installed.$\n$\nIf you press the OK button, delete the old version and then reinstall. If you press the Cancel button, the upgrade will be canceled."
 LangString STR_ALREADY_INSTALLED    ${LANG_KOREAN}  "${PRODUCT_YEAR_NAME}은 이미 설치되어 있습니다. $\n$\n확인 버튼을 누르면 이전 버전을 삭제 후 재설치하고 취소 버튼을 누르면 업그레이드를 취소합니다."
 LangString STR_ALREADY_INSTALLED    ${LANG_ENGLISH} "${PRODUCT_YEAR_NAME} was already installed.$\n$\nIf you press the OK button, delete the old version and then reinstall. If you press the Cancel button, the upgrade will be canceled."
 
-;2020-07-07
 LangString STR_ALREADY_INSTALLED_2018    ${LANG_KOREAN}  "${PRODUCT_YEAR_NAME_2018}은 이미 설치되어 있습니다. $\n$\n확인 버튼을 누르면 이전 버전을 삭제합니다."
 LangString STR_ALREADY_INSTALLED_2018    ${LANG_ENGLISH} "${PRODUCT_YEAR_NAME_2018} was already installed.$\n$\nIf you press the OK button, delete the old version."
 
-;2019-09-25
-;LangString STR_INSTALL_COMPLETE     ${LANG_KOREAN}  "${PRODUCT_FULL_VERSION_NAME} 설치가 완료되었습니다."
-;LangString STR_INSTALL_COMPLETE     ${LANG_ENGLISH} "Finished to Install ${PRODUCT_FULL_VERSION_NAME}"
 LangString STR_INSTALL_COMPLETE     ${LANG_KOREAN}  "${PRODUCT_YEAR_NAME} 설치가 완료되었습니다."
 LangString STR_INSTALL_COMPLETE     ${LANG_ENGLISH} "Finished to Install ${PRODUCT_YEAR_NAME}"
 
-;2019-09-25
-;LangString STR_FINISH_AND_CLOSE     ${LANG_KOREAN}  "컴퓨터에 ${PRODUCT_FULL_VERSION_NAME} 구성요소가 모두 설치되었습니다. 설치 프로그램을 닫으려면 '닫음' 버튼을 눌러주세요."
-;LangString STR_FINISH_AND_CLOSE     ${LANG_ENGLISH} "${PRODUCT_FULL_VERSION_NAME} all components have been installed on your computer. To close the installer, please press the 'close' button."
 LangString STR_FINISH_AND_CLOSE     ${LANG_KOREAN}  "컴퓨터에 ${PRODUCT_YEAR_NAME} 구성요소가 모두 설치되었습니다. 설치 프로그램을 닫으려면 '닫음' 버튼을 눌러주세요."
 LangString STR_FINISH_AND_CLOSE     ${LANG_ENGLISH} "${PRODUCT_YEAR_NAME} all components have been installed on your computer. To close the installer, please press the 'close' button."
 
-LangString STR_UNINSTALL_WEMX       $(LANG_KOREAN)  "weMX 2.0을 삭제 합니다."
-LangString STR_UNINSTALL_WEMX       $(LANG_ENGLISH) "Unstall a weMX 2.0"
+LangString STR_UNINSTALL_TK       $(LANG_KOREAN)  "TK 2.0을 삭제 합니다."
+LangString STR_UNINSTALL_TK       $(LANG_ENGLISH) "Unstall a TK 2.0"
 LangString STR_UNINSTALL_USERDATA   $(LANG_KOREAN)  "사용자 데이터를 삭제 합니다."
 LangString STR_UNINSTALL_USERDATA   $(LANG_ENGLISH) "Delete a user data."
 
 LicenseLangString LicenseTXT        ${LANG_ENGLISH} "resource\license(en).txt" 
 LicenseLangString LicenseTXT        ${LANG_KOREAN}  "resource\license(kr).txt"
-
-;VIProductVersion				        2.0.0.0
-;VIAddVersionKey "ProductName"			"weMX HMI+SCADA 2018"
-;VIAddVersionKey "Comments"			    "weMX HMI+SCADA 2018 Installer"
-;VIAddVersionKey "FileDescription"		"weMX HMI+SCADA 2018"
-;VIAddVersionKey "FileVersion"			"${PRODUCT_REVISION}"
-;VIAddVersionKey "CompanyName"			"Neodian Technology"
-;VIAddVersionKey "LegalCopyright"		"Copyright @ Neodian Technology"
 
 ; License page
 !define MUI_LICENSEPAGE_RADIOBUTTONS
@@ -197,10 +168,9 @@ LicenseLangString LicenseTXT        ${LANG_KOREAN}  "resource\license(kr).txt"
 !insertmacro MUI_PAGE_LICENSE $(LicenseTXT)
 
 ; Components page
-;2017-09-07 수정
 ;!define MUI_PAGE_HEADER_TEXT "Choose Components"
 ;!define MUI_PAGE_HEADER_TEXT "Create Shortcuts to Desktop"
-;!define MUI_PAGE_HEADER_SUBTEXT "Choose which features of weMX you want to install."
+;!define MUI_PAGE_HEADER_SUBTEXT "Choose which features of TK you want to install."
 ;!insertmacro MUI_PAGE_COMPONENTS
 
 ; Directory page
@@ -214,15 +184,15 @@ LicenseLangString LicenseTXT        ${LANG_KOREAN}  "resource\license(kr).txt"
 ; Finish page
 !define MUI_PAGE_HEADER_SUBTEXT 
 
-!define MUI_FINISHPAGE_LINK 'Click here to visit us at wemx.biz.'
-  !define MUI_FINISHPAGE_LINK_LOCATION http://wemx.biz/
+!define MUI_FINISHPAGE_LINK 'Click here to visit us at TK.biz.'
+  !define MUI_FINISHPAGE_LINK_LOCATION http://TK.biz/
 !define MUI_FINISHPAGE_TEXT_LARGE
 !define MUI_FINISHPAGE_TITLE "$(STR_INSTALL_COMPLETE)"
 !define MUI_FINISHPAGE_TEXT "$(STR_FINISH_AND_CLOSE)"
 !insertmacro MUI_PAGE_FINISH
 
 ; Uninstall Component page
-!define MUI_UNPAGE_HEADER_TEXT "weMX Uninstall"
+!define MUI_UNPAGE_HEADER_TEXT "TK Uninstall"
 !insertmacro MUI_UNPAGE_COMPONENTS
 
 ; Uninstaller pages
@@ -262,16 +232,15 @@ Function GetFontName
 FunctionEnd 
 
 Function .onInit
-  ; ikban : 2019-09-25 : 모든 사용자 접근으로 설정 변경.
   SetShellVarContext all 
   
 ; 실행중인 프로그램 체크
   FindProcessLoop:
-    FindProcDLL::FindProc "${PRODUCT_DESIGNER_PROCESS_NAME}"
+    FindProcDLL::FindProc "${PRODUCT_D_PROCESS_NAME}"
     StrCmp $R0 "1" FindProcessMsg
     
   FindPlayerLoop:
-    FindProcDLL::FindProc "${PRODUCT_PLAYER_PROCESS_NAME}"
+    FindProcDLL::FindProc "${PRODUCT_P_PROCESS_NAME}"
     StrCmp $R0 "1" FindProcessMsg
     Goto FindProcessEnd
     
@@ -282,11 +251,11 @@ Function .onInit
   FindProcessEnd:
 
   FindTransmitDaemonLoop:
-    FindProcDLL::FindProc "wemxTransmitDaemon.exe"
+    FindProcDLL::FindProc "TKTransmitDaemon.exe"
 	StrCmp $R0 "1" killTransmitDaemon
 	Goto FindTransmitDaemonLoopEnd
   killTransmitDaemon: 	
-	KillProcDLL::KillProc "wemxTransmitDaemon.exe"
+	KillProcDLL::KillProc "TKTransmitDaemon.exe"
 	Goto FindTransmitDaemonLoop
   FindTransmitDaemonLoopEnd:	
   
@@ -295,7 +264,7 @@ Function .onInit
   ReadRegStr $R0 "${PRODUCT_UNINST_ROOT_KEY}" "${PRODUCT_UNINST_KEY_2018}" "UninstallString"
   StrCmp $R0 "" chk2020  
   MessageBox MB_OKCANCEL|MB_ICONEXCLAMATION \
-  "$(STR_ALREADY_INSTALLED_2018)" IDOK uninst_2018 IDCANCEL chk2020 
+  "$(STR_ALREADY_INSTALLED_2)" IDOK uninst_2018 IDCANCEL chk2020 
   
 chk2020: 
   ReadRegStr $R0 "${PRODUCT_UNINST_ROOT_KEY}" "${PRODUCT_UNINST_KEY}" "UninstallString"
@@ -308,13 +277,13 @@ doAbort:
   
 uninst_2018:
   ClearErrors
-  ReadRegStr $InstDir "HKLM" "Software\Microsoft\Windows\CurrentVersion\Uninstall\weMX HMI+SCADA 2018" "InstallDir"
+  ReadRegStr $InstDir "HKLM" "Software\Microsoft\Windows\CurrentVersion\Uninstall\TK 2" "InstallDir"
   StrCmp $InstDir "" emptyinstdir_2018  
   Goto execunint_2018
 emptyinstdir_2018:  
-  StrCpy $InstDir "$PROFILE\weMX HMI+SCADA 2018"
+  StrCpy $InstDir "$PROFILE\TK 2"
 execunint_2018:
-  ReadRegStr $R1 "HKLM" "Software\Microsoft\Windows\CurrentVersion\Uninstall\weMX HMI+SCADA 2018" "removePlayerString"
+  ReadRegStr $R1 "HKLM" "Software\Microsoft\Windows\CurrentVersion\Uninstall\TK 2" "removePlayerString"
   StrCmp $R1 "" execuninststring_2018
   ExecWait '$R1 _?=$InstDir'
   Goto removedirectory_2018
@@ -353,7 +322,6 @@ done:
 FunctionEnd
   
 Function .onInstSuccess
-   ;ikban : 2019-09-25 : 모든 사용자 접근으로 설정 변경.
    SetShellVarContext all 
   
    ReadRegStr $0 HKLM "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{33d1fd90-4274-48a1-9bc1-97e33d9c2d6f}\" "DisplayName"
@@ -418,29 +386,23 @@ Function un.onInit
   FindPlayerLoopEnd:
   
   FindTransmitDaemonLoop:
-    FindProcDLL::FindProc "wemxTransmitDaemon.exe"
+    FindProcDLL::FindProc "TKTransmitDaemon.exe"
 	StrCmp $R0 "1" killTransmitDaemon
 	Goto FindTransmitDaemonLoopEnd
   killTransmitDaemon: 	
-	KillProcDLL::KillProc "wemxTransmitDaemon.exe"
+	KillProcDLL::KillProc "TKTransmitDaemon.exe"
 	Goto FindTransmitDaemonLoop
   FindTransmitDaemonLoopEnd:  
 FunctionEnd
-; MUI end ------
 
-;2019-09-25
-;Name "${PRODUCT_FULL_VERSION_NAME}"
 Name "${PRODUCT_YEAR_NAME}"
-;OutFile "${PRODUCT_FULL_NAME}_${PRODUCT_REVISION}.exe"
 OutFile "${PRODUCT_REVISION_PREV}${PRODUCT_REVISION}.exe"
 InstallDir "$PROGRAMFILES\${PRODUCT_YEAR_NAME}"
 InstallDirRegKey HKLM "${PRODUCT_DIR_REGKEY}" ""
 ShowInstDetails show
 ShowUnInstDetails show
 
-;2019-09-25
-;BrandingText /TRIMRIGHT "${PRODUCT_FULL_VERSION_NAME}" ;설치 프로그램의 하부에 가로줄과 함께 나올 텍스트
-BrandingText /TRIMRIGHT "${PRODUCT_YEAR_NAME}" ;설치 프로그램의 하부에 가로줄과 함께 나올 텍스트
+BrandingText /TRIMRIGHT "${PRODUCT_YEAR_NAME}"
 
 Function installCommomFile
   SetShellVarContext all 
@@ -478,13 +440,10 @@ Function installCommomFile
 FunctionEnd
 
 
-; ikban : 2017-09-13 : hidden section
 Section "-Default Section"
-  ;ikban : 2019-09-25 : 모든 사용자 접근으로 설정 변경.
   SetShellVarContext all 
   
 ; 섹선별 설치용량 직접 계산시 사용 (KB 단위)
-;AddSize 504000
   SetOutPath "$INSTDIR\bin"
     File /r "install\bin\*"
   SetOutPath "$INSTDIR\lib"
@@ -519,29 +478,15 @@ SectionEnd
 
 
 
-Section "weMX Designer 2020" SEC01
+Section "TK D 2" SEC01
   Var /GLOBAL addfont
   DeleteRegKey ${PRODUCT_UNINST_ROOT_KEY} "${PRODUCT_UNINST_KEY}"
   DeleteRegKey HKLM "${PRODUCT_DIR_REGKEY}"
   
   SetAutoClose true
   
-  ; ikban : 2019-09-25 : 모든 사용자 접근으로 설정 변경.
   SetShellVarContext all 
-  
-  ;!insertmacro APP_UNASSOCIATE "w7z" "w7z.file"
-  ;!insertmacro APP_UNASSOCIATE "w7z" "w7z.file.designer"
-  ;!insertmacro APP_UNASSOCIATE "w7z" "w7z.file.player"
-  ;!insertmacro APP_UNASSOCIATE "wex" "wex.file"
-  ;!insertmacro APP_UNASSOCIATE "wex" "wex.file.designer"
-  ;!insertmacro APP_UNASSOCIATE "wex" "wex.file.player"
-  ;!insertmacro UPDATEFILEASSOC
-  
-  ; 폰트 추가 작업
-  ;!define HWND_BROADCAST $hwnd
-  ;SetShellVarContext all
-  ;SetOverwrite off
-  
+    
   StrCpy $addfont "NO"
   StrCpy $FONT_DIR $FONTS
   SetOutPath "$FONT_DIR"
@@ -632,66 +577,29 @@ Section "weMX Designer 2020" SEC01
   
   ; 2017-08-02
   ;Call installCommomFile 
-  CreateDirectory "$SMPROGRAMS\${PRODUCT_YEAR_NAME}"
-  CreateShortCut "$SMPROGRAMS\${PRODUCT_YEAR_NAME}\${PRODUCT_DESIGNER_LINK_NAME}.lnk" "$INSTDIR\bin\designercore.exe"
-  CreateShortCut "$SMPROGRAMS\${PRODUCT_YEAR_NAME}\${PRODUCT_PLAYER_LINK_NAME}.lnk" "$INSTDIR\bin\playerapp.exe" "" "$INSTDIR\resources\image\player.ico" 
-  CreateShortCut "$SMPROGRAMS\${PRODUCT_YEAR_NAME}\${PRODUCT_PLAYER_LINK_NAME}(Debug).lnk" "$INSTDIR\bin\playerapp.exe" '"-debug"' "$INSTDIR\resources\image\player.ico"
-  CreateShortCut "$SMPROGRAMS\${PRODUCT_YEAR_NAME}\${PRODUCT_PLAYER_LINK_NAME}(FullScreen).lnk" "$INSTDIR\bin\playerapp.exe" '"-mode" "fullscreen"' "$INSTDIR\resources\image\player_fullscreen.ico"
-  CreateShortCut "$SMPROGRAMS\${PRODUCT_YEAR_NAME}\${PRODUCT_PLAYER_LINK_NAME}(Fit-to-Screen).lnk" "$INSTDIR\bin\playerapp.exe" '"-mode" "fitscreen"' "$INSTDIR\resources\image\player_fitscreen.ico"
-  CreateShortCut "$DESKTOP\${PRODUCT_DESIGNER_LINK_NAME}.lnk" "$INSTDIR\bin\designercore.exe"
-  CreateShortCut "$SMPROGRAMS\${PRODUCT_YEAR_NAME}\${PRODUCT_MANUAL_NAME}.lnk" "$INSTDIR\manual"
-  CreateShortCut "$SMPROGRAMS\${PRODUCT_YEAR_NAME}\${PRODUCT_LICENSETOOL_LINK_NAME}.lnk" "$INSTDIR\bin\licensetool.exe"
-  ;CreateShortCut "$SMPROGRAMS\${PRODUCT_YEAR_NAME}\weMX 2018 Transmitter.lnk" "$INSTDIR\bin\transmitter.exe"  
-  CreateShortCut "$SMPROGRAMS\${PRODUCT_YEAR_NAME}\Uninstall.lnk" "$INSTDIR\uninst.exe"
   
-!insertmacro APP_ASSOCIATE_WEMX "w7z" "w7z.file.player" "w7z File" "$INSTDIR\resources\image\w7z_file.ico,0" "player" "" "" "" "$INSTDIR\bin\playerapp.exe $\"%1$\""
-!insertmacro APP_ASSOCIATE_WEMX "w7z" "w7z.file.designer" "w7z File" "$INSTDIR\resources\image\w7z_file.ico,0" "designer" "" "" "" "$INSTDIR\bin\designercore.exe $\"%1$\""
-!insertmacro APP_ASSOCIATE_WEMX "wex" "wex.file.player" "wex File" "$INSTDIR\resources\image\w7z_file.ico,0" "player" "" "" "" "$INSTDIR\bin\playerapp.exe $\"%1$\""
-!insertmacro APP_ASSOCIATE_WEMX "wex" "wex.file.designer" "wex File" "$INSTDIR\resources\image\w7z_file.ico,0" "designer" "" "" "" "$INSTDIR\bin\designercore.exe $\"%1$\""
-
-!insertmacro APP_ASSOCIATE "w7zc" "w7zc.file" "w7zc File" "$INSTDIR\resources\image\w7zc_file.ico,0" "" ""
-!insertmacro APP_ASSOCIATE "w7zd" "w7zd.file" "w7zd File" "$INSTDIR\resources\image\w7zd_file.ico,0" "" ""
-!insertmacro APP_ASSOCIATE "w7zs" "w7zs.file" "w7zs File" "$INSTDIR\resources\image\w7zs_file_256.ico,0" "" ""
-
-!insertmacro UPDATEFILEASSOC
-
 ; FriendlyAppName 을 추가 하기위한 코드는 우선 적용해둔다. (*주석 처리 해둔다.)
-WriteRegStr HKCR Applications\playerapp.exe\shell\open "FriendlyAppName" "weMX Player 2020"
-WriteRegStr HKCR Applications\designercore.exe\shell\open "FriendlyAppName" "weMX Designer 2020"
+WriteRegStr HKCR Applications\playerapp.exe\shell\open "FriendlyAppName" "TK P"
+WriteRegStr HKCR Applications\designercore.exe\shell\open "FriendlyAppName" "TK De"
     
 SectionEnd
 
-Section "weMX Player 2020" SEC02
+Section "TK P" SEC02
   ; ikban : 2019-09-25 : 모든 사용자 접근으로 설정 변경.
   SetShellVarContext all 
-  ;CreateShortCut "$DESKTOP\${PRODUCT_PLAYER_LINK_NAME}.lnk" "$INSTDIR\bin\playerapp.exe" 
-  ;CreateShortCut "$DESKTOP\${PRODUCT_PLAYER_LINK_NAME}(FullScreen).lnk" "$INSTDIR\bin\playerapp.exe" '"-mode" "fullscreen"'
+
   IfFileExists "$INSTDIR\bin\designercore.exe" end file_not_found
     file_not_found:
         ; 2017-08-02
         ;Call installCommomFile
-		CreateDirectory "$SMPROGRAMS\${PRODUCT_YEAR_NAME}"
-        CreateShortCut "$SMPROGRAMS\${PRODUCT_YEAR_NAME}\${PRODUCT_DESIGNER_LINK_NAME}.lnk" "$INSTDIR\bin\designercore.exe"
-        CreateShortCut "$SMPROGRAMS\${PRODUCT_YEAR_NAME}\${PRODUCT_PLAYER_LINK_NAME}.lnk" "$INSTDIR\bin\playerapp.exe" "" "$INSTDIR\resources\image\player.ico"  
-        CreateShortCut "$SMPROGRAMS\${PRODUCT_YEAR_NAME}\${PRODUCT_PLAYER_LINK_NAME}(Debug).lnk" "$INSTDIR\bin\playerapp.exe" '"-debug"' "$INSTDIR\resources\image\player.ico"
-        CreateShortCut "$SMPROGRAMS\${PRODUCT_YEAR_NAME}\${PRODUCT_PLAYER_LINK_NAME}(FullScreen).lnk" "$INSTDIR\bin\playerapp.exe" '"-mode" "fullscreen"' "$INSTDIR\resources\image\player_fullscreen.ico"
-		CreateShortCut "$SMPROGRAMS\${PRODUCT_YEAR_NAME}\${PRODUCT_PLAYER_LINK_NAME}(Fit-to-Screen).lnk" "$INSTDIR\bin\playerapp.exe" '"-mode" "fitscreen"' "$INSTDIR\resources\image\player_fitscreen.ico"
-        CreateShortCut "$SMPROGRAMS\${PRODUCT_YEAR_NAME}\${PRODUCT_MANUAL_NAME}.lnk" "$INSTDIR\manual"
-        CreateShortCut "$SMPROGRAMS\${PRODUCT_YEAR_NAME}\${PRODUCT_LICENSETOOL_LINK_NAME}.lnk" "$INSTDIR\bin\licensetool.exe"
-		;CreateShortCut "$SMPROGRAMS\${PRODUCT_YEAR_NAME}\weMX 2018 Transmitter.lnk" "$INSTDIR\bin\transmitter.exe"		
-          !insertmacro APP_ASSOCIATE_WEMX "w7z" "w7z.file.player" "w7z File" "$INSTDIR\resources\image\w7z_file.ico,0" "player" "" "" "" "$INSTDIR\bin\playerapp.exe $\"%1$\""
-        !insertmacro APP_ASSOCIATE_WEMX "wex" "wex.file.player" "wex File" "$INSTDIR\resources\image\w7z_file.ico,0" "player" "" "" "" "$INSTDIR\bin\playerapp.exe $\"%1$\""
-        !insertmacro APP_ASSOCIATE "w7zc" "w7zc.file" "w7zc File" "$INSTDIR\resources\image\w7zc_file.ico,0" "" ""
-        !insertmacro APP_ASSOCIATE "w7zd" "w7zd.file" "w7zd File" "$INSTDIR\resources\image\w7zd_file.ico,0" "" ""
-        !insertmacro APP_ASSOCIATE "w7zs" "w7zs.file" "w7zs File" "$INSTDIR\resources\image\w7zs_file_256.ico,0" "" ""
-        !insertmacro UPDATEFILEASSOC
+		
     end:
     
 SectionEnd
 
 
 Section -AdditionalIcons
-  ;ikban : 2019-09-25 : 모든 사용자 접근으로 설정 변경.
+
   SetShellVarContext all 
   SetOutPath $INSTDIR
   WriteIniStr "$INSTDIR\${PRODUCT_YEAR_NAME}.url" "InternetShortcut" "URL" "${PRODUCT_WEB_SITE}"
@@ -699,7 +607,6 @@ Section -AdditionalIcons
 SectionEnd
 
 Section -Post
-  ;ikban : 2019-09-25 : 모든 사용자 접근으로 설정 변경.
   SetShellVarContext all 
   WriteUninstaller "$INSTDIR\uninst.exe"
   WriteRegStr HKLM "${PRODUCT_DIR_REGKEY}" "" "$INSTDIR\bin\playerapp.exe"
@@ -722,7 +629,7 @@ SectionEnd
   !insertmacro MUI_DESCRIPTION_TEXT ${SEC05} "$(STR_INSTALL_PLAYER_DEBUG)"
 !insertmacro MUI_FUNCTION_DESCRIPTION_END
 
-Section un.weMX SEC03
+Section un.TK SEC03
   ;ikban : 2019-09-25 : 모든 사용자 접근으로 설정 변경.
   SetShellVarContext all 
 SectionIn RO
@@ -755,20 +662,11 @@ SectionIn RO
   Delete "$SMPROGRAMS\${PRODUCT_YEAR_NAME}\${PRODUCT_PLAYER_NAME}(Debug).lnk"
   Delete "$SMPROGRAMS\${PRODUCT_YEAR_NAME}\${PRODUCT_PLAYER_NAME}(FullScreen).lnk"
   Delete "$SMPROGRAMS\${PRODUCT_YEAR_NAME}\${PRODUCT_PLAYER_NAME}(Fit-to-Screen).lnk"  
-  ;Delete "$SMPROGRAMS\${PRODUCT_YEAR_NAME}\weMX 2018 Transmitter.lnk"   
+  ;Delete "$SMPROGRAMS\${PRODUCT_YEAR_NAME}\TK 2018 Transmitter.lnk"   
   RMDIR /r "$SMPROGRAMS\${PRODUCT_YEAR_NAME}"
   
   SetAutoClose true
-  !insertmacro APP_UNASSOCIATE "w7z" "w7z.file"
-  !insertmacro APP_UNASSOCIATE "w7z" "w7z.file.player"
-  !insertmacro APP_UNASSOCIATE "w7z" "w7z.file.designer"
-  !insertmacro APP_UNASSOCIATE "wex" "wex.file"
-  !insertmacro APP_UNASSOCIATE "wex" "wex.file.player"
-  !insertmacro APP_UNASSOCIATE "wex" "wex.file.designer"
-  !insertmacro APP_UNASSOCIATE "w7zc" "w7zc.file"
-  !insertmacro APP_UNASSOCIATE "w7zd" "w7zd.file"
-  !insertmacro APP_UNASSOCIATE "w7zs" "w7zs.file"
-  !insertmacro UPDATEFILEASSOC
+
 SectionEnd
 
 Section /o "un.Setting Data" SEC04
@@ -780,6 +678,6 @@ SectionEnd
 
 ; Section uninstall descriptions
 !insertmacro MUI_UNFUNCTION_DESCRIPTION_BEGIN 
-  !insertmacro MUI_DESCRIPTION_TEXT ${SEC03} "$(STR_UNINSTALL_WEMX)"
+  !insertmacro MUI_DESCRIPTION_TEXT ${SEC03} "$(STR_UNINSTALL_TK)"
   !insertmacro MUI_DESCRIPTION_TEXT ${SEC04} "$(STR_UNINSTALL_USERDATA)"
 !insertmacro MUI_UNFUNCTION_DESCRIPTION_END
